@@ -15,6 +15,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@100;400&display=swap');
     </style>
 
+    <link rel="shortcut icon" href="junoon-logo-only.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -56,6 +58,12 @@
                     </path>
                 </svg></li>
         </ul>
+        <div class="arrow">
+            <p>←</p>
+        </div>
+        <div class="arrow2">
+            <p>→</p>
+        </div>
         <div class="center">
             <h1 id="junoon">JUNOON</h1>
             <h2 id="junoon">The Photography Club of NSUT</h2>
@@ -78,14 +86,7 @@
                 <img src="junoon-logo-only.png" alt="">
             </div>
             <div class="flexxx">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi hic quisquam atque obcaecati odio
-                    quod, quos nihil pariatur quasi dolore dicta possimus! Pariatur placeat temporibus sit esse
-                    inventore voluptate est error nisi fuga harum perspiciatis soluta, odio repellat nemo veniam,
-                    exercitationem aliquid similique odit dolores quidem? Quia ratione, ad nesciunt, sint ipsa
-                    distinctio voluptatem iste eligendi animi doloremque nobis delectus voluptate nihil error cum beatae
-                    praesentium provident voluptas porro necessitatibus, corporis saepe et cumque! Deleniti consectetur
-                    iure quis. Aliquid officia sapiente, iste provident asperiores ducimus mollitia, dolorum dolore
-                    eveniet tempora voluptate laborum consectetur officiis dolor, iure nam natus vero repellendus </p>
+                <p>Founded in 2010, Junoon is a platform for photography and videography enthusiasts of NSUT where they can showcase and nurture their talents . Our members excel not just in different genres of photography but also in film making, photo editing and storytelling through pictures. We bring out our flair for photography through three of our main projects: Project Perspective, Storygram and Humans Of NSUT. Two more new projects, Poll it Out and Project Reels, have been incorporated adding to the rich history of the society. Junoon also organizes the Ethnic Day every year wherein the students and the faculty come together to celebrate and display our fusion of cultures, traditions and harmony. Our society provides the platform to the photography enthusiasts as they exhibit talent through their pictures that we feature on our social media handles. We conduct photowalks around Delhi, hence providing a captivating experience for everyone who wants to learn and grow in this field. Additionally, our team holds technical workshops for enhanced learning and organizes time to time photography competitions. Junoon also indulges in collborations with other societies to exhibit the best of happenings in NSUT. </p>
             </div>
         </div>
         <div id="number">
@@ -127,6 +128,35 @@
                 time: 1000
             });
         });
+        let images = ['/cover4.jpeg','/cover5.jpeg','/cover6.jpg','/cover7.jpeg'];
+        let current = 0;
+        document.querySelector(".main").style.backgroundImage = `url('${images[current]}')`
+        let myInteval = () => {
+            current++;
+            if(current>3)
+                current = 0
+            document.querySelector(".main").style.backgroundImage = `url('${images[current]}')`
+
+        };
+        let intervalDuration = 5000;
+        let intervalWrap = setInterval(myInteval, intervalDuration);
+
+        document.querySelector(".arrow2").addEventListener("click",()=>{
+            clearInterval(intervalWrap);
+            current++;
+            if(current>3)
+                current = 0
+            document.querySelector(".main").style.backgroundImage = `url('${images[current]}')`
+            intervalWrap = setInterval(myInteval, intervalDuration);
+        })
+        document.querySelector(".arrow").addEventListener("click",()=>{
+            clearInterval(intervalWrap);
+            current--;
+            if(current<0)
+                current = 3
+            document.querySelector(".main").style.backgroundImage = `url('${images[current]}')`
+            intervalWrap = setInterval(myInteval, intervalDuration);
+        })
     </script>
 </body>
 
