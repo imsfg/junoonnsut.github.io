@@ -135,6 +135,9 @@
             current++;
             if(current>3)
                 current = 0
+            let image = new Image();
+            image.src = images[current];
+            
             document.querySelector(".main").style.backgroundImage = `url('${images[current]}')`
 
         };
