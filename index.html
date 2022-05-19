@@ -120,7 +120,7 @@
     </div>
 
     <script src="jquery.counterup.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script>
         jQuery(document).ready(function ($) {
             $('.counter').counterUp({
@@ -128,7 +128,7 @@
                 time: 1000
             });
         });
-        let images = ['/cover4.jpeg','/cover5.jpeg','/cover6.jpg','/cover7.jpeg'];
+        let images = ['./cover4.jpeg','./cover5.jpeg','./cover6.jpg','./cover7.jpeg'];
         let current = 0;
         document.querySelector(".main").style.backgroundImage = `url('${images[current]}')`
         let myInteval = () => {
